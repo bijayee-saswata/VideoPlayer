@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     VideoView videoView;
     ImageButton btn;
 
-    String url= "https://www.youtube.com/watch?v=_KYqDCJii0c";
+    String vurl= "http://mic.duytan.edu.vn:86/FINAL.mp4";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,12 +34,12 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             if (!videoView.isPlaying()) {
-                Uri uri = Uri.parse(url);
+                Uri uri = Uri.parse(vurl);
                 videoView.setVideoURI(uri);
                 videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mp) {
-                        btn.setImageResource(R.drawable.ic_pause);
+                        btn.setImageResource(R.drawable.ic_play);
                     }
                 });
             }
